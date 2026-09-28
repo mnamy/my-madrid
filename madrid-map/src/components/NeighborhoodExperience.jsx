@@ -288,17 +288,26 @@ function NeighborhoodOverview({
   return (
     <section className="neighborhood-overview">
       <header className="neighborhood-overview__header">
-        <h1 className="display-lg">
-          explore my madrid
-        </h1>
+      <h1 className="display-lg">
+        explore my madrid
+      </h1>
 
-        <p className="body-lg">
-          nine neighborhoods that became
-          part of my semester. hover around
-          and click into each one to explore
-          the memories behind it.
-        </p>
-      </header>
+      <p className="body-lg">
+        nine neighborhoods that became
+        part of my semester. hover around
+        and click into each one to explore
+        the memories behind it.
+      </p>
+
+      <a
+        className="neighborhood-overview__source-link"
+        href="https://github.com/mnamy/my-madrid"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        view source on github ↗
+      </a>
+    </header>
 
       <div className="neighborhood-grid">
         {ordered.map(

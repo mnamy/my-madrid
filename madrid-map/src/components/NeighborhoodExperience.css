@@ -1291,3 +1291,22 @@
       var(--space-4);
   }
 }
+
+/* GitHub source link */
+.neighborhood-experience .neighborhood-overview__source-link {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-body);
+  color: var(--color-neighborhood-accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity var(--transition-fast);
+}
+
+.neighborhood-experience .neighborhood-overview__source-link:hover {
+  opacity: 0.7;
+}
