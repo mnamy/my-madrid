@@ -12,7 +12,7 @@ import SiteNav
   from './components/SiteNav'
 
 
-const GITHUB_URL = ''
+const GITHUB_URL = 'https://github.com/madelinenamy/my-madrid'
 
 
 export default function App() {
