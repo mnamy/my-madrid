@@ -1,0 +1,122 @@
+/* ==========================================================================
+   MADRID, REMEMBERED — DESIGN TOKENS
+   ========================================================================== */
+
+:root {
+
+  /* -----------------------------------------------------------------------
+     COLORS
+     ----------------------------------------------------------------------- */
+
+  --color-cream: #FFFBF4;
+  --color-yellow: #F7D488;
+  --color-red: #720E07;
+
+  /* Semantic colors */
+  --color-background: var(--color-cream);
+  --color-text: var(--color-red);
+
+  --color-neighborhood-background: var(--color-red);
+  --color-neighborhood-text: var(--color-cream);
+  --color-neighborhood-accent: var(--color-yellow);
+
+  --color-accent: var(--color-yellow);
+
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHY
+     ----------------------------------------------------------------------- */
+
+  --font-display:
+    "Ysabeau Infant",
+    sans-serif;
+
+  --font-body:
+    "Ysabeau",
+    sans-serif;
+
+
+  /* Display / headings */
+
+  --text-display-xl: 64px;
+  --text-display-lg: 48px;
+
+  --text-h1: 40px;
+  --text-h2: 32px;
+  --text-h3: 24px;
+  --text-h4: 20px;
+
+
+  /* Body / UI */
+
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-caption: 12px;
+
+
+  /* Font weights */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+
+  /* Line heights */
+
+  --line-display: 1;
+  --line-heading: 1.1;
+  --line-body: 1.5;
+
+
+  /* Letter spacing */
+
+  --tracking-display: -0.03em;
+  --tracking-heading: -0.015em;
+  --tracking-body: 0;
+  --tracking-label: 0.08em;
+
+
+  /* -----------------------------------------------------------------------
+     SPACING
+     8px-based system
+     ----------------------------------------------------------------------- */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+
+  /* -----------------------------------------------------------------------
+     LAYOUT
+     ----------------------------------------------------------------------- */
+
+  --page-padding: 32px;
+  --content-max-width: 1440px;
+
+
+  /* -----------------------------------------------------------------------
+     BORDERS + SHAPE
+     ----------------------------------------------------------------------- */
+
+  --border-width: 1px;
+
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-pill: 999px;
+
+
+  /* -----------------------------------------------------------------------
+     TRANSITIONS
+     ----------------------------------------------------------------------- */
+
+  --transition-fast: 150ms ease;
+  --transition-default: 250ms ease;
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "id": "malasana",
+    "name": "Malasaña",
+    "sourceLabels": [
+      "Universidad"
+    ],
+    "icon": "/neighborhood-icons/malasana.png"
+  },
+  {
+    "id": "sol",
+    "name": "Sol",
+    "sourceLabels": [
+      "Sol"
+    ],
+    "icon": "/neighborhood-icons/sol.png"
+  },
+  {
+    "id": "palacio",
+    "name": "Palacio",
+    "sourceLabels": [
+      "Palacio"
+    ],
+    "icon": "/neighborhood-icons/palacio.png"
+  },
+  {
+    "id": "chueca",
+    "name": "Chueca",
+    "sourceLabels": [
+      "Justicia"
+    ],
+    "icon": "/neighborhood-icons/chueca.png"
+  },
+  {
+    "id": "salamanca",
+    "name": "Salamanca",
+    "sourceLabels": [
+      "Salamanca",
+      "Recoletos"
+    ],
+    "icon": "/neighborhood-icons/salamanca.png"
+  },
+  {
+    "id": "barrio-de-las-letras",
+    "name": "Barrio de las Letras",
+    "sourceLabels": [
+      "Cortes"
+    ],
+    "icon": "/neighborhood-icons/barrio-de-las-letras.png"
+  },
+  {
+    "id": "retiro",
+    "name": "Retiro",
+    "sourceLabels": [
+      "Retiro",
+      "Jerónimos"
+    ],
+    "icon": "/neighborhood-icons/retiro.png"
+  },
+  {
+    "id": "lavapies",
+    "name": "Lavapiés",
+    "sourceLabels": [
+      "Embajadores"
+    ],
+    "icon": "/neighborhood-icons/lavapies.png"
+  },
+  {
+    "id": "la-latina",
+    "name": "La Latina",
+    "sourceLabels": [
+      "La Latina"
+    ],
+    "icon": "/neighborhood-icons/la-latina.png"
+  }
+]

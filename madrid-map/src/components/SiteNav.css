@@ -1,0 +1,74 @@
+.site-nav {
+  position: fixed;
+
+  top:
+    var(--space-5);
+
+  right:
+    var(--page-padding);
+
+  z-index: 1100;
+}
+
+
+.site-nav button {
+  border: 0;
+
+  padding:
+    var(--space-2)
+    0;
+
+  background: transparent;
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    var(--text-body);
+
+  font-weight:
+    var(--weight-semibold);
+
+  cursor: pointer;
+
+  transition:
+    color
+    var(--transition-fast);
+}
+
+
+.site-nav--explore button {
+  color:
+    var(--color-cream);
+}
+
+
+.site-nav--explore button:hover {
+  color:
+    var(--color-yellow);
+}
+
+
+.site-nav--about button {
+  color:
+    var(--color-red);
+}
+
+
+.site-nav--about button:hover {
+  color:
+    var(--color-yellow);
+}
+
+
+@media (
+  max-width: 650px
+) {
+  .site-nav {
+    top:
+      var(--space-4);
+
+    right:
+      var(--space-4);
+  }
+}

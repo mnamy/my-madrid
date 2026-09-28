@@ -1,0 +1,48 @@
+# macOS / editor
+.DS_Store
+.vscode/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node / Vite
+**/node_modules/
+**/dist/
+**/.vite/
+
+# Logs / local databases
+*.log
+*.db
+*.db-shm
+*.db-wal
+
+# Private source data
+private-data/
+
+# Curation assets / personal photos
+curation-assets/
+curation-previews/
+curation-app/public/previews/
+curation-app/public/curation-manifest.json
+
+# Personal website photos
+madrid-map/public/photos/
+madrid-map/public/photos-grid/
+madrid-map/public/photos-modal/
+madrid-map/public/photos-hires*/
+madrid-map/public/photos-preview-backup/
+
+# Generated data containing personal photo/location information
+madrid-map/public/curated-memories.json
+madrid-map/public/neighborhood-stats.json
+
+# Intermediate pipeline outputs
+madrid-photo-metadata*.json
+madrid-memory-clusters.json
+madrid-curation-results.json
+curation-manifest.json
+curation-uuids.txt
+selected-photo-uuids*.txt
+memories-to-split.json
