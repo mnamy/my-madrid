@@ -413,6 +413,8 @@ function GridPhoto({
   photo,
   memory,
   onOpen,
+  onLoad,
+  revealIndex,
 }) {
   const highResSource =
     `/photos-modal/${photo.uuid}.jpeg`
@@ -423,6 +425,10 @@ function GridPhoto({
   return (
     <button
       className="neighborhood-photo"
+      style={{
+        '--photo-reveal-index':
+          revealIndex,
+      }}
       onClick={onOpen}
       aria-label={`Open memory from ${formatDate(
         memory.start,
@@ -431,9 +437,10 @@ function GridPhoto({
       <img
         src={gridSource}
         alt=""
-        loading="lazy"
+        loading="eager"
         decoding="async"
         fetchPriority="low"
+        onLoad={onLoad}
         onError={(
           event,
         ) => {
@@ -738,6 +745,13 @@ function NeighborhoodDetail({
     setModalPhoto,
   ] = useState(null)
 
+  const [
+    loadedPhotoIds,
+    setLoadedPhotoIds,
+  ] = useState(
+    () => new Set(),
+  )
+
   const neighborhoodMemories =
     useMemo(
       () =>
@@ -777,6 +791,46 @@ function NeighborhoodDetail({
         neighborhoodMemories,
       ],
     )
+
+  useEffect(() => {
+    setLoadedPhotoIds(
+      new Set(),
+    )
+  }, [
+    neighborhood.id,
+  ])
+
+  const galleryReady =
+    photoItems.length === 0 ||
+    loadedPhotoIds.size >=
+      photoItems.length
+
+  function markPhotoLoaded(
+    photoKey,
+  ) {
+    setLoadedPhotoIds(
+      (current) => {
+        if (
+          current.has(
+            photoKey,
+          )
+        ) {
+          return current
+        }
+
+        const next =
+          new Set(
+            current,
+          )
+
+        next.add(
+          photoKey,
+        )
+
+        return next
+      },
+    )
+  }
 
   const currentRouteIndex =
     NEXT_STOP_ORDER
@@ -955,29 +1009,56 @@ function NeighborhoodDetail({
           />
 
           <section className="neighborhood-photos">
-            <div className="neighborhood-photos__masonry">
+            <div
+              className={`neighborhood-photos__masonry ${
+                galleryReady
+                  ? 'is-ready'
+                  : ''
+              }`}
+              aria-busy={
+                !galleryReady
+              }
+            >
               {photoItems.map(
-                ({
-                  photo,
-                  memory,
-                }) => (
-                  <GridPhoto
-                    key={`${memory.id}-${photo.uuid}`}
-                    photo={
-                      photo
-                    }
-                    memory={
-                      memory
-                    }
-                    onOpen={() =>
-                      setModalPhoto({
-                        memory,
-                        photoUuid:
-                          photo.uuid,
-                      })
-                    }
-                  />
-                ),
+                (
+                  {
+                    photo,
+                    memory,
+                  },
+                  index,
+                ) => {
+                  const photoKey =
+                    `${memory.id}-${photo.uuid}`
+
+                  return (
+                    <GridPhoto
+                      key={
+                        photoKey
+                      }
+                      photo={
+                        photo
+                      }
+                      memory={
+                        memory
+                      }
+                      revealIndex={
+                        index
+                      }
+                      onLoad={() =>
+                        markPhotoLoaded(
+                          photoKey,
+                        )
+                      }
+                      onOpen={() =>
+                        setModalPhoto({
+                          memory,
+                          photoUuid:
+                            photo.uuid,
+                        })
+                      }
+                    />
+                  )
+                },
               )}
             </div>
           </section>

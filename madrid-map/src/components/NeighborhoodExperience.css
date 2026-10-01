@@ -617,11 +617,6 @@
 .neighborhood-photos {
   margin-top:
     var(--space-3);
-
-  content-visibility: auto;
-
-  contain-intrinsic-size:
-    auto 1200px;
 }
 
 
@@ -654,6 +649,11 @@
   cursor: pointer;
 
   overflow: hidden;
+
+  opacity: 0;
+
+  transform:
+    translateY(10px);
 }
 
 
@@ -687,6 +687,46 @@
 
   outline-offset:
     3px;
+}
+
+
+.neighborhood-photos__masonry.is-ready
+.neighborhood-photo {
+  animation:
+    neighborhood-photo-reveal
+    320ms
+    ease
+    forwards;
+
+  animation-delay:
+    calc(
+      var(--photo-reveal-index) *
+      45ms
+    );
+}
+
+
+@keyframes neighborhood-photo-reveal {
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+  .neighborhood-photos__masonry.is-ready
+  .neighborhood-photo {
+    animation: none;
+
+    opacity: 1;
+
+    transform: none;
+  }
 }
 
 
